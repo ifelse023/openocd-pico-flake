@@ -59,14 +59,15 @@
             configureFlags = [
               "--disable-werror"
               "--enable-ftdi"
-              "--enable-sysfsgpio"
-              "--enable-bcm2835gpio"
-              "--enable-picoprobe"
-              "--enable-cmsis-dap"
-              "--enable-hidapi"
-              "--enable-capstone"
-              "--enable-jlink"
               "--enable-remote-bitbang"
+              "--enable-sysfsgpio"
+              "--enable-picoprobe"
+              "--enable-capstone"
+              "--enable-cmsis-dap"
+              "--enable-dummy"
+              # "--enable-bcm2835gpio"
+              # "--enable-hidapi"
+              # "--enable-jlink"
             ];
             postInstall = pkgs.lib.optionalString pkgs.stdenv.hostPlatform.isLinux ''
               mkdir -p "$out/etc/udev/rules.d"
